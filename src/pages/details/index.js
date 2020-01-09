@@ -11,8 +11,6 @@ function renderDetailsPage(target = 'pageContainer') {
   </div>
   `;
 
-  // parse it as html
-
   const targetElement = document.getElementById(target);
   targetElement.innerHTML = '';
   targetElement.appendChild(pageTemplate);
