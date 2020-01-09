@@ -24,8 +24,7 @@ function renderThemesPage(target = 'pageContainer') {
 
   // get the buttons
   const getThemes = new Button('Get Themes', 'get_themes', () => {
-    const payload = new Theme('new region');
-    store.dispatch(ThemeActions.getThemes(payload));
+    store.dispatch(ThemeActions.getThemesAsync());
   });
 
   const clearThemes = new Button('Clear Themes', 'clear_themes', () => {

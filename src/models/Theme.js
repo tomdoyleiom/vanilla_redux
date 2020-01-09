@@ -6,13 +6,14 @@ class Theme {
 
     if (children) {
       children.forEach((el) => {
-        const child = el;
+        const child = new Theme(el.name, el.contacts, el.children);
         child.parent = local;
       });
     }
     this.children = children;
   }
 
+  // for some reason we're losing this :(
   toggleSelected(value = null) {
     const toToggle = this;
     if (value == null) {

@@ -15,7 +15,7 @@ const logger = createLogger({});
 
 // create an array of all the middleware we're going to use with the store
 const middleware = [
-  ReduxThunk,
+  ReduxThunk.withExtraArgument(process.env.API), // this should let us have access to the url
   logger,
 ];
 
