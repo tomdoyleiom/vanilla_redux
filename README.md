@@ -12,6 +12,9 @@ This project was created for proof of concept and to allow experimenting and tem
    - build the application (in the future this will include sass and minification, but for now just adds bundle.js to build)
    - it will serve the build directory (so that it can be tested, default url: http://localhost:5000)
    - it will serve the json rest api for making fetch requests (default url: http://localhost:3000)
+     - you can also access the json api via `http://my-json-server.typicode.com/tomdoyleiom/vanilla_redux`
+     - to host your own db.json at my-json-server, fork the repository and update the db.json file.
+     - it will be available at `http://my-json-server.typicode.com/<username>/<repo>`
  
 ## Available scripts
 a number of npm scripts have been provided to make it easier to work with this application.
