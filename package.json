@@ -7,7 +7,8 @@
     "test": "jest",
     "test:watch": "jest --watchAll",
     "build": "webpack --config webpack.config.js",
-    "build:watch": "webpack --config webpack.config.js --watch"
+    "build:watch": "webpack --config webpack.config.js --watch",
+    "api": "json-server --watch db.json" 
   },
   "keywords": [
     "redux",
