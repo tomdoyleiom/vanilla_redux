@@ -32,7 +32,7 @@ function selectTheme(state, payload) {
   return state;
 }
 
-function themeReducer(state = [], action) {
+function themeReducer(state = [], action = {}) {
   switch (action.type) {
     case 'GET_THEMES':
       return [...themeData];

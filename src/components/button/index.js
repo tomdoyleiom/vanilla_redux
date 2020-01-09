@@ -1,4 +1,3 @@
-
 function renderButton(button) {
   const component = document.createElement('button');
   component.setAttribute('id', button.id);

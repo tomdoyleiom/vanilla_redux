@@ -1,9 +1,9 @@
+import html from '../../utilities/html';
 /* eslint-disable operator-linebreak */
 function renderDetailsPage(target = 'pageContainer') {
   // get the basic template HTML
-  const pageTemplate =
-  /* html */
-  `
+
+  const pageTemplate = html`
   <div class="map-page">
     <div id="themes-container">
       <p>I do believe I'm the details tab!</p>
@@ -12,12 +12,10 @@ function renderDetailsPage(target = 'pageContainer') {
   `;
 
   // parse it as html
-  const res = new DOMParser().parseFromString(pageTemplate, 'text/html');
-  const element = [...res.body.children][0];
 
   const targetElement = document.getElementById(target);
   targetElement.innerHTML = '';
-  targetElement.appendChild(element);
+  targetElement.appendChild(pageTemplate);
 }
 
 export default renderDetailsPage;

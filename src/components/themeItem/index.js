@@ -1,4 +1,5 @@
 import ThemeActions from '../../actions/themeActions';
+import html from '../../utilities/html';
 import store from '../../store';
 
 // eslint-disable-next-line no-unused-vars
@@ -19,19 +20,19 @@ function themeItemComponent(theme) {
     });
   }
 
-  const template = `
-  <div class="theme">
+  const template = html(/* html */
+    `<div class="theme">
       <input class="theme-checkbox" type="checkbox" ${(theme.selected) ? 'checked' : ''}/>
       <span class="theme-name">${theme.name}</span>
     </div>
-  `;
-  const res = new DOMParser().parseFromString(template, 'text/html');
-  const element = [...res.body.children][0];
-  element.querySelector('.theme-name').addEventListener('click', () => {
+  `,
+  );
+
+  template.querySelector('.theme-name').addEventListener('click', () => {
     store.dispatch(ThemeActions.selectTheme(theme.name));
   });
-  element.appendChild(children);
-  return element;
+  template.appendChild(children);
+  return template;
 }
 
 function renderThemes(themes) {

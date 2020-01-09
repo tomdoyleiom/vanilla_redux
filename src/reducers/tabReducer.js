@@ -1,4 +1,4 @@
-export default function tabReducer(state = 'map', action) {
+export default function tabReducer(state = 'map', action = {}) {
   switch (action.type) {
     case 'TAB_MAP':
       return 'map';
