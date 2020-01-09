@@ -1,0 +1,60 @@
+{
+  "name": "vanilla_redux_nrw_testing",
+  "version": "0.0.1",
+  "description": "a test vanilla javascript application using redux for discovery into a future nrw project",
+  "main": "src/main.js",
+  "scripts": {
+    "test": "jest",
+    "test:watch": "jest --watchAll",
+    "build": "webpack --config webpack.config.js",
+    "build:watch": "webpack --config webpack.config.js --watch"
+  },
+  "keywords": [
+    "redux",
+    "js"
+  ],
+  "author": "t doyle",
+  "license": "ISC",
+  "dependencies": {
+    "redux": "^4.0.5",
+    "redux-actions": "^2.6.5",
+    "webpack": "^4.41.5"
+  },
+  "devDependencies": {
+    "@babel/plugin-proposal-object-rest-spread": "^7.7.7",
+    "@babel/preset-env": "^7.7.7",
+    "babel-jest": "^24.9.0",
+    "babel-loader": "^8.0.6",
+    "babel-plugin-transform-object-rest-spread": "^6.26.0",
+    "eslint": "^6.8.0",
+    "eslint-config-airbnb-base": "^14.0.0",
+    "eslint-plugin-import": "^2.19.1",
+    "eslint-plugin-jest": "^23.3.0",
+    "jest": "^24.9.0",
+    "webpack-cli": "^3.3.10"
+  },
+  "jest": {
+    "moduleFileExtensions": [
+      "js"
+    ],
+    "moduleDirectories": [
+      "node_modules"
+    ],
+    "transform": {
+      ".*": "<rootDir>/node_modules/babel-jest"
+    }
+  },
+  "babel": {
+    "presets": [
+      [
+        "@babel/preset-env",
+        {
+          "modules": "commonjs",
+          "targets": {
+            "node": "current"
+          }
+        }
+      ]
+    ]
+  }
+}
