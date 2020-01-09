@@ -8,7 +8,7 @@
     "test:watch": "jest --watchAll",
     "build": "webpack --config webpack.config.js",
     "build:watch": "webpack --config webpack.config.js --watch",
-    "api": "json-server --watch db.json" 
+    "api": "json-server --watch db.json"
   },
   "keywords": [
     "redux",
@@ -17,6 +17,7 @@
   "author": "t doyle",
   "license": "ISC",
   "dependencies": {
+    "dotenv-webpack": "^1.7.0",
     "redux": "^4.0.5",
     "redux-actions": "^2.6.5",
     "redux-devtools-extension": "^2.13.8",
