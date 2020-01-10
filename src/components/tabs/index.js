@@ -4,21 +4,22 @@ import renderButton from '../button';
 import store from '../../store';
 
 function renderTabs(target = 'tabContainer') {
+  const { tab } = store.getState();
   const tabsTemplate = document.createElement('div');
 
-  const themesButton = new Button('Themes', 'theme_button', () => {
+  const themesButton = new Button('themes', 'theme_button', () => {
     store.dispatch(TabActions.themesTab());
   });
-  const mapButton = new Button('Map', 'map_button', () => {
+  const mapButton = new Button('map', 'map_button', () => {
     store.dispatch(TabActions.mapTab());
   });
-  const detailsButton = new Button('Details', 'details_button', () => {
+  const detailsButton = new Button('details', 'details_button', () => {
     store.dispatch(TabActions.detailsTab());
   });
 
-  tabsTemplate.appendChild(renderButton(themesButton));
-  tabsTemplate.appendChild(renderButton(mapButton));
-  tabsTemplate.appendChild(renderButton(detailsButton));
+  tabsTemplate.appendChild(renderButton(themesButton, tab === themesButton.name));
+  tabsTemplate.appendChild(renderButton(mapButton, tab === mapButton.name));
+  tabsTemplate.appendChild(renderButton(detailsButton, tab === detailsButton.name));
 
   const tabsContainer = document.getElementById(target);
   tabsContainer.innerHTML = '';
