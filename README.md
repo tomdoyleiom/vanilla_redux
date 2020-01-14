@@ -35,3 +35,7 @@ same as the above build script, but adds the --watch flag so that webpack listen
 ### npm run api
 hosts the `db.json` file as a rest API running locally.
 can be used to test data calls.
+
+### npm run e2e
+Opens the Cypress test runner for running E2E tests.
+For more information, visit https://docs.cypress.io
