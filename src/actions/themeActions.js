@@ -12,7 +12,10 @@ function fetchThemes() {
 
 function getThemesAsync() {
   return async (dispatch) => fetchThemes().then(
-    async (response) => dispatch(addThemes(await response.json())),
+    async (response) => {
+      dispatch(clearThemes);
+      dispatch(addThemes(await response.json()));
+    },
     () => dispatch(clearThemes()),
   );
 }

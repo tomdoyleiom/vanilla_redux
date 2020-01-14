@@ -45,8 +45,7 @@ function themeReducer(state = [], action = {}) {
     case 'ADD_THEME':
       return [...state, action.payload];
     case 'ADD_THEMES':
-
-      return [...state, ...action.payload];
+      return [...action.payload];
     case 'SELECT_THEME':
       selectTheme(state, action.payload);
       return state;
