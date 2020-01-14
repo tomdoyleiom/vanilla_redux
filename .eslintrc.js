@@ -2,7 +2,8 @@ module.exports = {
   env: {
     browser: true,
     es6: true,
-    "jest/globals": true
+    "jest/globals": true,
+    "cypress/globals":true
   },
   extends: [
     'airbnb-base',
@@ -15,5 +16,5 @@ module.exports = {
     ecmaVersion: 2018,
     sourceType: 'module',
   },
-  plugins:["jest"]
+  plugins:["jest", "cypress"]
 };
