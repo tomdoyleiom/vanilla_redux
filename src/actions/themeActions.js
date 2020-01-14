@@ -7,7 +7,6 @@ const selectTheme = createAction('SELECT_THEME');
 
 
 function fetchThemes() {
-  // fetch the themes
   return fetch(`${process.env.API}/themes`);
 }
 
