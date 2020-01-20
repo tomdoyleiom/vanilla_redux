@@ -22,7 +22,7 @@ window.render = () => {
   }
 };
 
-window.onload = () => {
+window.onload = () => { 
   store.subscribe(window.render);
-  store.dispatch({ type: 'new' });
+  store.dispatch({ type: 'PopulateApplication' });
 };

@@ -1,17 +1,59 @@
-const template = /* html */`
-<div id='Satellite' class="tabcontent">
+import html from '../../../utilities/html';
+import store from '../../../store';
+
+function getSatelliteDropDown(satelliteCategories = undefined) {
+  const htmlSatelites = [];
+  if (satelliteCategories !== undefined) {
+    satelliteCategories.prototype.forEach((satelliteCategory) => {
+      /* HTML */
+      const optionElement = html`
+        <option value="${satelliteCategory.id}">${satelliteCategory.name}</option>
+      `;
+      htmlSatelites.push(optionElement);
+    });
+
+    return htmlSatelites;
+  }
+
+
+  return htmlSatelites;
+}
+
+function populateSkyRadiusDropDown() {
+  const min = 0;
+  const max = 90;
+  const step = 5;
+  const stepCount = (max - min) / step + 1;
+  let currValue = min;
+  const elements = [];
+  for (let i = 0; i < stepCount; i += 1, currValue += step) {
+    const opt = document.createElement('option');
+    opt.value = currValue;
+    opt.innerHTML = currValue;
+    elements.push(opt);
+  }
+  return elements;
+}
+
+function template(satelliteData) {
+  const satellites = store.getState("satellites");
+   // <p id="SatelliteCount">Satellites: ${satelliteData.satelites.count}</p>
+  // <p id="TransactionCount">Transaction Count: ${satelliteData.transactionCount}</p>
+  // <p id="MinAlltitude">Lowest Alltitude: ${satelliteData.lowest}km</p>
+  // <p id="MaxAlltitude">Heighest Alltitude: ${satelliteData.heighest}km</p>
+  const innerTemplate = /* html */ `
+  <div id='Satellite' class="tabcontent">
   <input type="hidden" id="NoSatellites" value="No Sattelites Found!" />
-  <h3>Sattellite Tracker</h3>
-  <p id="SatelliteCount">Satellites: 00</p>
-  <p id="TransactionCount">Transaction Count: 00</p>
-  <p id="MinAlltitude">Lowest Alltitude: 00 (km)</p>
-  <p id="MaxAlltitude">Heightest Alltitude: 00 (km)</p>
+  <h3>Satellite Tracker</h3>
+
   Satellite Category:
   <select id="satelliteCategoryDropDown">
+
   </select>
   <br>
   Sky Radius:
   <select id="satelliteRadiusDropDown">
+
   </select>
   <br>
   Interval Timer:
@@ -29,5 +71,24 @@ const template = /* html */`
   <button id="runBtn">Find Sattellites</button>
 </div>
 `;
+
+  const renderedTemplate = html(innerTemplate);
+  const options = getSatelliteDropDown(satelliteData.satelites);
+  const satCatDropDown = renderedTemplate.querySelector(
+    '#satelliteCategoryDropDown',
+  );
+  if (options.length) {
+    options.forEach((option) => satCatDropDown.appendChild(option));
+  }
+
+  const skyRadiusDropDown = renderedTemplate.querySelector(
+    '#satelliteRadiusDropDown',
+  );
+  const radii = populateSkyRadiusDropDown();
+  if (radii.length) {
+    radii.forEach((radius) => skyRadiusDropDown.appendChild(radius));
+  }
+  return renderedTemplate;
+}
 
 export default template;

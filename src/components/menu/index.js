@@ -18,14 +18,30 @@ function renderMenu() {
   const { menu } = store.getState();
   const locTemplate = template;
   const tabs = locTemplate.querySelectorAll('.tablinks');
-  tabs[0].addEventListener('click', () => { store.dispatch(selectMenuItem('Satellite')); });
-  tabs[1].addEventListener('click', () => { store.dispatch(selectMenuItem('ISS-Tracker')); });
-  tabs[2].addEventListener('click', () => { store.dispatch(selectMenuItem('NextBike-Loc')); });
-  tabs[3].addEventListener('click', () => { store.dispatch(selectMenuItem('CardiffPark-Poly')); });
+  tabs[0].addEventListener('click', (e) => {
+    e.preventDefault();
+    e.stopImmediatePropagation();
+    store.dispatch(selectMenuItem('Satellite'));
+  });
+  tabs[1].addEventListener('click', (e) => {
+    e.preventDefault();
+    e.stopImmediatePropagation();
+    store.dispatch(selectMenuItem('ISS-Tracker'));
+  });
+  tabs[2].addEventListener('click', (e) => {
+    e.preventDefault();
+    e.stopImmediatePropagation();
+    store.dispatch(selectMenuItem('NextBike-Loc'));
+  });
+  tabs[3].addEventListener('click', (e) => {
+    e.preventDefault();
+    e.stopImmediatePropagation();
+    store.dispatch(selectMenuItem('CardiffPark-Poly'));
+  });
   let panel = null;
   switch (menu.selectedTab) {
     case ('SAT_TRACK'):
-      panel = renderPanel(satellitePanel);
+      panel = satellitePanel();
       break;
     case ('ISS-Tracker'):
       panel = renderPanel(issPanel);
@@ -37,7 +53,7 @@ function renderMenu() {
       panel = renderPanel(cardiffPanel);
       break;
     default:
-      panel = renderPanel(satellitePanel);
+      panel = satellitePanel();
   }
   const panelContainer = locTemplate.querySelector('.panelContainer');
   clear(panelContainer);
