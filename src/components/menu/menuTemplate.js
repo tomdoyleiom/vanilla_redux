@@ -8,8 +8,6 @@ const template = html(`
     <button class="tablinks" >NextBike Tracker</button>
     <button class="tablinks" >Cardiff Park Poly</button> 
   </div>
-
-
 `);
 
 export default template;

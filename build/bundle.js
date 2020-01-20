@@ -675,7 +675,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _act
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _utilities_html__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../utilities/html */ \"./src/utilities/html.js\");\n\n\nconst template = Object(_utilities_html__WEBPACK_IMPORTED_MODULE_0__[\"default\"])(`\n  <div id=\"menuView\">\n  <div class=\"tab\" id=\"tab\">\n    <button class=\"tablinks\" >Satellite Tracker</button>\n    <button class=\"tablinks\" id=\"defaultOpen\">ISS Tracker</button>\n    <button class=\"tablinks\" >NextBike Tracker</button>\n    <button class=\"tablinks\" >Cardiff Park Poly</button> \n  </div>\n\n\n`);\n\n/* harmony default export */ __webpack_exports__[\"default\"] = (template);\n\n\n//# sourceURL=webpack:///./src/components/menu/menuTemplate.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _utilities_html__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../utilities/html */ \"./src/utilities/html.js\");\n\n\nconst template = Object(_utilities_html__WEBPACK_IMPORTED_MODULE_0__[\"default\"])(`\n  <div id=\"menuView\">\n  <div class=\"tab\" id=\"tab\">\n    <button class=\"tablinks\" >Satellite Tracker</button>\n    <button class=\"tablinks\" id=\"defaultOpen\">ISS Tracker</button>\n    <button class=\"tablinks\" >NextBike Tracker</button>\n    <button class=\"tablinks\" >Cardiff Park Poly</button> \n  </div>\n`);\n\n/* harmony default export */ __webpack_exports__[\"default\"] = (template);\n\n\n//# sourceURL=webpack:///./src/components/menu/menuTemplate.js?");
 
 /***/ }),
 
