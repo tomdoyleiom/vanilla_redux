@@ -1,6 +1,6 @@
 import html from '../../utilities/html';
 
-const template = html`
+const template = html(`
   <div id="menuView">
   <div class="tab" id="tab">
     <button class="tablinks" >Satellite Tracker</button>
@@ -82,6 +82,6 @@ const template = html`
   </div>
   <div id="Feedback"></div>
   </div>
-`;
+`);
 
 export default template;

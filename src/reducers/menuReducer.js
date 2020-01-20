@@ -6,7 +6,8 @@ const defaultState = {
 export default function menuReducer(state = defaultState, action = {}) {
   switch (action.type) {
     case 'SELECT_MENUITEM':
-      return { ...state, selectedTab: action };
+      debugger
+      return { ...state, selectedTab: action.payload };
     case 'ADD_FEEDBACK':
       return state;
     default:
