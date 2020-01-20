@@ -1,4 +1,5 @@
 import html from '../../utilities/html';
+import menu from '../../components/menu';
 /* eslint-disable operator-linebreak */
 function renderMapPage(target = 'pageContainer') {
   // get the basic template HTML
@@ -13,8 +14,10 @@ function renderMapPage(target = 'pageContainer') {
   `;
 
   const targetElement = document.getElementById(target);
+
   targetElement.innerHTML = '';
   targetElement.appendChild(pageTemplate);
+  targetElement.appendChild(menu());
 }
 
 export default renderMapPage;
