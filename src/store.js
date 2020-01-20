@@ -10,7 +10,6 @@ const defaultState = {
 };
 
 // sets up a logging instance which will log actions to the console
-// TODO: set up so this does not occur on production
 const logger = createLogger({});
 
 // create an array of all the middleware we're going to use with the store
