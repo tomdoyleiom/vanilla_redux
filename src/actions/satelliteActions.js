@@ -1,7 +1,11 @@
 import { createAction } from 'redux-actions';
+import { SatelliteActionTypes } from '../actions/ActionTypes';
 
-const addCategories = createAction('ADD_CATEGORIES');
-const clearCategories = createAction('CLEAR_CATEGORIES');
+const addCategories = createAction(SatelliteActionTypes.ADD_CATEGORIES);
+const clearCategories = createAction(SatelliteActionTypes.CLEAR_CATEGORIES);
+const getSatelliteData = createAction(SatelliteActionTypes.GET_SATELLITES_DATA);
+const clearSatelliteData = createAction(SatelliteActionTypes.CLEAR_SATELLITES_DATA_SATELLITES_DATA);
+const displaySatellites = createAction(SatelliteActionTypes.DISPLAY_SATELLITES);
 
 function fetchSatelliteData() {
   return fetch(`${process.env.API}/satellites`);
@@ -17,6 +21,22 @@ function getSatelliteCategoriesAsync() {
     () => dispatch(clearCategories()),
   );
 }
+
+/**
+ * TODO: Add get satellite data
+ */
+function getSatelliteDataAsync(){
+
+}
+
+/**
+ * TODO: clear satallite data from arcGIS map view
+ */
+
+
+/**
+ * display retrieved satellite data into arcGIS map view
+ */
 
 const SatelliteActions = {
   addCategories,
