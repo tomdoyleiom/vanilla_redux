@@ -1,30 +1,12 @@
 import html from '../../utilities/html';
-import { loadModules } from 'esri-loader';
+import initialiseMap from '../../utilities/map';
 import menu from '../../components/menu';
+import store from '../../store';
 
 /* eslint-disable operator-linebreak */
 function renderMapPage(target = 'pageContainer') {
-  loadModules(['esri/Map', 'esri/views/SceneView']).then(([Map, SceneView]) => {
-    const map = new Map({
-      basemap: 'hybrid',
-      ground: 'world-elevation',
-    });
-
-    const view = new SceneView({
-      container: 'mapouter',
-      map,
-      camera: {
-        position: { // observation point
-          x: -118.80800,
-          y: 33.96100,
-          z: 2500000, // altitude in meters
-        },
-      },
-    });
-  }).catch((err) => {
-    // console.error(err);
-  });
-
+  const { map } = store.getState();
+  initialiseMap('mapouter', map);
 
   // houses arcgis map
   // get the basic template HTML
