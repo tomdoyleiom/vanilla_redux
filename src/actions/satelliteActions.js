@@ -1,14 +1,13 @@
+import { SatelliteActionTypes } from './ActionTypes';
 import { createAction } from 'redux-actions';
-import { SatelliteActionTypes } from '../actions/ActionTypes';
 
 const addCategories = createAction(SatelliteActionTypes.ADD_CATEGORIES);
 const clearCategories = createAction(SatelliteActionTypes.CLEAR_CATEGORIES);
-const getSatelliteData = createAction(SatelliteActionTypes.GET_SATELLITES_DATA);
-const clearSatelliteData = createAction(SatelliteActionTypes.CLEAR_SATELLITES_DATA_SATELLITES_DATA);
-const displaySatellites = createAction(SatelliteActionTypes.DISPLAY_SATELLITES);
+// const getSatelliteData = createAction(SatelliteActionTypes.GET_SATELLITES_DATA);
+// const clearSatelliteData = createAction(SatelliteActionTypes.CLEAR_SATELLITES_DATA_SATELLITES_DATA);
+// const displaySatellites = createAction(SatelliteActionTypes.DISPLAY_SATELLITES);
 
 function fetchSatelliteData() {
-  debugger
   return fetch(`${process.env.API}/satellites`);
 }
 
@@ -26,7 +25,7 @@ function getSatelliteCategoriesAsync() {
 /**
  * TODO: Add get satellite data
  */
-function getSatelliteDataAsync(){
+function getSatelliteDataAsync() {
 
 }
 

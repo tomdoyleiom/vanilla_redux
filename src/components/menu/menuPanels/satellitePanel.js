@@ -34,7 +34,7 @@ function populateSkyRadiusDropDown() {
   return elements;
 }
 
-function template(satelliteData) {
+function template(satelliteData = {}) {
   // <p id="SatelliteCount">Satellites: ${satelliteData.satellites.count}</p>
   // <p id="TransactionCount">Transaction Count: ${satelliteData.transactionCount}</p>
   // <p id="MinAlltitude">Lowest Alltitude: ${satelliteData.lowest}km</p>

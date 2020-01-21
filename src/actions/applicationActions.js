@@ -5,7 +5,6 @@ import satelliteActions from './satelliteActions';
  */
 function populateApplication() {
   return async (dispatch) => {
-    debugger
     dispatch(satelliteActions.getSatelliteCategoriesAsync());
   };
 }
