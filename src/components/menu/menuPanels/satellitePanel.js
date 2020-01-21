@@ -1,22 +1,21 @@
 import html from '../../../utilities/html';
-import store from '../../../store';
 
 function getSatelliteDropDown(satelliteCategories = undefined) {
-  const htmlSatelites = [];
+  const htmlsatellites = [];
   if (satelliteCategories !== undefined) {
     satelliteCategories.prototype.forEach((satelliteCategory) => {
       /* HTML */
       const optionElement = html`
         <option value="${satelliteCategory.id}">${satelliteCategory.name}</option>
       `;
-      htmlSatelites.push(optionElement);
+      htmlsatellites.push(optionElement);
     });
 
-    return htmlSatelites;
+    return htmlsatellites;
   }
 
 
-  return htmlSatelites;
+  return htmlsatellites;
 }
 
 function populateSkyRadiusDropDown() {
@@ -36,8 +35,7 @@ function populateSkyRadiusDropDown() {
 }
 
 function template(satelliteData) {
-  const satellites = store.getState("satellites");
-   // <p id="SatelliteCount">Satellites: ${satelliteData.satelites.count}</p>
+  // <p id="SatelliteCount">Satellites: ${satelliteData.satellites.count}</p>
   // <p id="TransactionCount">Transaction Count: ${satelliteData.transactionCount}</p>
   // <p id="MinAlltitude">Lowest Alltitude: ${satelliteData.lowest}km</p>
   // <p id="MaxAlltitude">Heighest Alltitude: ${satelliteData.heighest}km</p>
@@ -71,9 +69,11 @@ function template(satelliteData) {
   <button id="runBtn">Find Sattellites</button>
 </div>
 `;
-
+  let options = [];
   const renderedTemplate = html(innerTemplate);
-  const options = getSatelliteDropDown(satelliteData.satelites);
+  if (satelliteData.satellites) {
+    options = getSatelliteDropDown(satelliteData.satellites);
+  }
   const satCatDropDown = renderedTemplate.querySelector(
     '#satelliteCategoryDropDown',
   );

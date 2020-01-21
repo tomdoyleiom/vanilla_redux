@@ -1,3 +1,4 @@
+import applicationActions from './actions/applicationActions';
 import renderDetailsPage from './pages/details';
 import renderMapPage from './pages/map';
 import renderTabs from './components/tabs';
@@ -22,7 +23,7 @@ window.render = () => {
   }
 };
 
-window.onload = () => { 
+window.onload = () => {
   store.subscribe(window.render);
-  store.dispatch({ type: 'PopulateApplication' });
+  store.dispatch(applicationActions.populateApplication());
 };

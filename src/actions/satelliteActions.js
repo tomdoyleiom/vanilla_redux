@@ -8,6 +8,7 @@ const clearSatelliteData = createAction(SatelliteActionTypes.CLEAR_SATELLITES_DA
 const displaySatellites = createAction(SatelliteActionTypes.DISPLAY_SATELLITES);
 
 function fetchSatelliteData() {
+  debugger
   return fetch(`${process.env.API}/satellites`);
 }
 
