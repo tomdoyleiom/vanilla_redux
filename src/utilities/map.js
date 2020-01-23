@@ -24,7 +24,7 @@ function initialiseMap(container, data) {
       MapView({ map, container });
     })
     .catch((err) => {
-    // handle any errors
+      // handle any errors
       console.error(err);
     });
 }
